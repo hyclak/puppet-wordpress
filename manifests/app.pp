@@ -35,8 +35,9 @@ class wordpress::app (
     path      => ['/bin','/sbin','/usr/bin','/usr/sbin'],
     cwd       => $install_dir,
     logoutput => 'on_failure',
-    user      => $wp_owner,
-    group     => $wp_group,
+# Using these breaks concat. Bug?
+#    user      => $wp_owner,
+#    group     => $wp_group,
   }
 
   ## Installation directory
